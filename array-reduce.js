@@ -1,11 +1,9 @@
 Array.prototype.myReduce = function(func, acc){
-    let value = acc;
     for (let index = 0; index < this.length; index++) {
         const element = this[index];
-        newArr.push(func(element));
+        acc = func(acc, element)
     }
-    return newArr
+    return acc
 }
 const a = [1,2,4]
-a.reduce
-console.log()
+console.log(a.myReduce((acc, curr) => acc + curr, 0)) // 7
